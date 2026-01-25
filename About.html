@@ -588,42 +588,58 @@
         
         .contact-form {
             background: var(--ivory);
-            border-radius: 0;
-            padding: 3rem;
+            border-radius: 8px;
+            padding: 2.5rem;
             border: 1px solid var(--stone);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h3 {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         
         .form-label {
             display: block;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
             color: var(--charcoal);
         }
         
         .form-input, .form-textarea, .form-select {
             width: 100%;
-            /* padding: 1rem; */
+            padding: 0.875rem 1rem;
             border: 1px solid var(--stone);
-            border-radius: 0;
+            border-radius: 4px;
             font-family: var(--sans);
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: var(--ivory);
+            background: #fff;
+            color: var(--charcoal);
+            box-sizing: border-box;
+        }
+        
+        .form-input::placeholder, .form-textarea::placeholder {
+            color: #999;
         }
         
         .form-input:focus, .form-textarea:focus, .form-select:focus {
             outline: none;
             border-color: var(--bronze);
-            box-shadow: 0 0 0 3px rgba(168, 146, 110, 0.1);
+            box-shadow: 0 0 0 3px rgba(168, 146, 110, 0.15);
+            background: #fff;
         }
         
         .form-textarea {
             resize: vertical;
-            min-height: 180px;
+            min-height: 140px;
         }
         
         .form-select {
@@ -631,7 +647,31 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' fill='%231a1a1a' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1rem center;
-            background-size: 14px;
+            background-size: 12px;
+            background-color: #fff;
+            cursor: pointer;
+            padding-right: 2.5rem;
+        }
+        
+        .form-status {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
         }
         
         .btn {
@@ -1421,7 +1461,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                     </div>
 
                     <div class="contact-form fade-in">
-                        <h3 style="margin-bottom: 2rem;">Send Us a Message</h3>
+                        <h3>Send Us a Message</h3>
                         
                         <!-- Form Status Messages -->
                         <div id="formStatus" class="form-status"></div>
@@ -1429,22 +1469,22 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                         <form id="contactForm">
                             <div class="form-group">
                                 <label class="form-label" for="name">Full Name *</label>
-                                <input type="text" id="name" class="form-input" required>
+                                <input type="text" id="name" class="form-input" placeholder="Enter your full name" required>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="email">Email Address *</label>
-                                <input type="email" id="email" class="form-input" required>
+                                <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="phone">Phone Number</label>
-                                <input type="tel" id="phone" class="form-input">
+                                <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number">
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="company">Company/Organization</label>
-                                <input type="text" id="company" class="form-input">
+                                <input type="text" id="company" class="form-input" placeholder="Enter company name">
                             </div>
 
                             <div class="form-group">
@@ -1461,7 +1501,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
 
                             <div class="form-group">
                                 <label class="form-label" for="message">Message *</label>
-                                <textarea id="message" class="form-textarea" required></textarea>
+                                <textarea id="message" class="form-textarea" placeholder="Tell us about your requirements..." required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
