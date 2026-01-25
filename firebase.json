@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/dist/**",
+      "*.md",
+      "*.pdf",
+      "storage.rules",
+      "package-lock.json"
+    ],
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/Home.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

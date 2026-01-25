@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact | Secret Linen - Heritage & Legacy</title>
+    <meta name="description" content="Discover Secret Linen's heritage and connect with us. 50+ years of luxury textile craftsmanship.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Add this with your other font links in the head section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Enhanced Color Palette */
+            --ivory: #fdfcf8;
+            --linen: #f5f1e8;
+            --stone: #e8e2d6;
+            --clay: #d8cdbc;
+            --charcoal: #1a1a1a;
+            --bronze: #a8926e;
+            --bronze-light: #c4b59a;
+            --sage: #a8b8a5;
+            
+            /* Typography */
+            --serif: 'Playfair Display', serif;
+            --sans: 'Inter', sans-serif;
+            
+            /* Spacing */
+            --section-padding: clamp(80px, 10vw, 80px);
+            --container-width: min(1400px, 94%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--serif);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+        }
+        
+        .container {
+            width: var(--container-width);
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: var(--section-padding) 0;
+        }
+        
+        /* Enhanced Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;              /* visual header height */
+            overflow: visible;         /* let the logo extend outside */
+            z-index: 1000;
+            background: rgba(253, 252, 248, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 226, 214, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.1rem 0.1rem;
+            position: relative;
+            height: 72px;              /* match header height */
+            padding: 0;                /* remove extra vertical padding */
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .logo:hover {
+            transform: translateX(-4px);
+        }
+        
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--bronze), var(--bronze-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ivory);
+            font-family: var(--serif);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .logo-text {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Desktop Navigation */
+        nav.desktop {
+            display: flex;
+        }
+        
+        nav.desktop ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        nav.desktop a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav.desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bronze);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        nav.desktop a:hover {
+            color: var(--bronze);
+        }
+        
+        nav.desktop a:hover:after {
+            width: 100%;
+        }
+        
+        nav.desktop a.active {
+            color: var(--bronze);
+        }
+        
+        nav.desktop a.active:after {
+            width: 100%;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            padding: 0.5rem;
+        }
+        
+        .mobile-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        nav.mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 252, 248, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--stone);
+            padding: 2rem 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        nav.mobile.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        nav.mobile ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        nav.mobile a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            display: block;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        nav.mobile a:hover,
+        nav.mobile a.active {
+            color: var(--bronze);
+            border-bottom-color: var(--bronze);
+        }
+        
+        /* Page Content */
+        .page-content {
+            display: none;
+            min-height: 80vh;
+            margin-top: -72px;
+            padding-top: calc(var(--header-h, 1px) + 8px);
+            animation: fadeIn 0.6s ease;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Page Header */
+.page-header {
+    padding: 140px 0 80px;
+    text-align: center;
+    position: relative;
+    color: var(--charcoal);
+    z-index: 1;
+    background: url('/files/Hero Background.png') no-repeat center center;
+    background-size: cover;
+    margin-top: 0; /* Ensure no margin */
+}
+
+/* Add this overlay */
+.page-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1; /* Changed from 0 to -1 */
+}
+
+/* Desktop: make hero full-bleed */
+@media (min-width: 1024px) {
+    .page-header {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+}
+
+/* Mobile: no parallax + safe height */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+    .page-header {
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+        min-height: 60vh;
+        margin-left: 0;
+        margin-right: 0;
+        width: auto;
+        max-width: none;
+        padding: 72px 0 48px !important; /* Force this padding */
+    }
+}
+
+/* Overlay stays the same */
+.page-header .container {
+    position: relative; 
+    z-index: 2; /* Increased from 1 to 2 */
+    text-shadow: 0 0 2px rgba(0,0,0,0.15);
+}
+
+        
+        .page-eyebrow {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--bronze);
+            margin-bottom: 1.5rem;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+            font-weight: 300;
+        }
+        
+        /* About Page Styles */
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .heritage-image {
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .heritage-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .heritage-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .heritage-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .heritage-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .mission-section {
+            background: var(--ivory);
+            border-radius: 0;
+            padding: 4rem 3rem;
+            margin: 4rem 0;
+            border: 1px solid var(--stone);
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .mission-item {
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 1.5rem;
+            border-radius: 0;
+            background: var(--ivory);
+            border: 1px solid transparent;
+        }
+        
+        .mission-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--sage);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+        
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--linen);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--bronze);
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .mission-item:hover .mission-icon {
+            background: var(--sage);
+            color: var(--ivory);
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .mission-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .mission-item:hover .mission-title {
+            color: var(--sage);
+        }
+        
+        .mission-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+        
+        .mission-item:hover .mission-description {
+            color: #555;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .value-card {
+            background: var(--ivory);
+            border-radius: 0;
+            padding: 3rem 2.5rem;
+            border: 1px solid var(--stone);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: var(--bronze);
+            transition: left 0.6s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--bronze);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .value-card:hover:before {
+            left: 0;
+        }
+        
+        .value-number {
+            width: 50px;
+            height: 50px;
+            background: var(--bronze);
+            color: var(--ivory);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .value-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Contact Page Styles */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            background: var(--ivory);
+            border-radius: 0;
+            padding: 3rem;
+            border: 1px solid var(--stone);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--stone);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            border-bottom-color: var(--bronze);
+            padding-left: 0.5rem;
+        }
+        
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--linen);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bronze);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover .contact-icon {
+            background: var(--bronze);
+            color: var(--ivory);
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item:hover .contact-details h4 {
+            color: var(--bronze);
+        }
+        
+        .contact-details p {
+            color: #666;
+            margin-bottom: 0.25rem;
+            line-height: 1.5;
+        }
+        
+        .contact-form {
+            background: var(--ivory);
+            border-radius: 0;
+            padding: 3rem;
+            border: 1px solid var(--stone);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+        }
+        
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            /* padding: 1rem; */
+            border: 1px solid var(--stone);
+            border-radius: 0;
+            font-family: var(--sans);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--ivory);
+        }
+        
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--bronze);
+            box-shadow: 0 0 0 3px rgba(168, 146, 110, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 180px;
+        }
+        
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' fill='%231a1a1a' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 14px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 400;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid transparent;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            font-family: var(--sans);
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--charcoal);
+            color: var(--ivory);
+            border-color: var(--charcoal);
+        }
+        
+        .btn-primary:hover {
+            background: var(--bronze);
+            color: var(--ivory);
+            border-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+        
+        .btn-light {
+            background: var(--ivory);
+            color: var(--charcoal);
+            border-color: var(--stone);
+        }
+        
+        .btn-light:hover {
+            background: var(--bronze);
+            color: var(--ivory);
+            border-color: var(--bronze);
+        }
+        
+        .map-section {
+            margin-top: 4rem;
+        }
+        
+        .map-container {
+            border-radius: 0;
+            overflow: hidden;
+            border: 1px solid var(--stone);
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Add Instagram Icon Styles */
+        .footer-social {
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(253, 252, 248, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(253, 252, 248, 0.2);
+            border-radius: 4px;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .social-link:hover {
+            color: var(--bronze);
+            border-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Responsive adjustment */
+        @media (max-width: 768px) {
+            .footer-social {
+                text-align: center;
+            }
+            
+            .social-link {
+                justify-content: center;
+            }
+        }
+        
+        /* Enhanced Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--ivory);
+            padding: 3rem 0 1.5rem;
+            width: 100%;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .site-logo {
+            height: 12px;
+            width: 120px;
+            filter: drop-shadow(0 0 8px rgba(168, 146, 110, 0.2));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .footer-logo .site-logo:hover {
+            transform: scale(1.12);
+            filter: drop-shadow(0 0 12px rgba(168, 146, 110, 0.3));
+        }
+        
+        .footer-description {
+            opacity: 0.7;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 400px;
+        }
+        
+        .footer-heading {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--ivory);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(253, 252, 248, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--bronze);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(253, 252, 248, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        /* Enhanced Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Form Status Messages */
+        .form-status {
+            padding: 1rem;
+            border-radius: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 400;
+            display: none;
+        }
+        
+        .form-status.success {
+            background-color: rgba(168, 184, 165, 0.2);
+            color: var(--sage);
+            border: 1px solid var(--sage);
+            display: block;
+        }
+        
+        .form-status.error {
+            background-color: rgba(255, 0, 0, 0.05);
+            color: #d9534f;
+            border: 1px solid #d9534f;
+            display: block;
+        }
+        
+        /* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+    .mission-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    nav.desktop {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    nav.mobile {
+        display: block;
+    }
+    
+    /* FIX: Remove gap between header and hero section */
+    .page-header {
+        padding: 72px 0 48px !important; /* Match header height exactly */
+        margin-top: 0 !important;
+        min-height: 60vh;
+    }
+    
+    .heritage-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .mission-section {
+        padding: 3rem 2rem;
+    }
+    
+    .contact-info, .contact-form {
+        padding: 2.5rem 2rem;
+    }
+    
+    .footer-brand {
+        text-align: center;
+        align-items: center;
+    }
+    
+    /* Ensure header doesn't create extra space */
+    header {
+        height: 72px;
+    }
+    
+    .header-container {
+        height: 72px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 1rem 2rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .value-card {
+        padding: 2.5rem 2rem;
+    }
+    
+    /* Additional mobile fixes */
+    .page-header {
+        padding: 72px 0 32px !important;
+        min-height: 50vh;
+    }
+    
+    .page-header h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+    
+    .contact-info, .contact-form {
+        padding: 2rem 1.5rem;
+    }
+}
+          
+        /* Replace text logo with glowing image */
+.site-logo {
+  height: 12px;                /* adjust based on your header height */
+  width: 120px;
+  position: relative;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(168, 146, 110, 0.25)); /* subtle bronze glow */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 18px rgba(168, 146, 110, 0.4));
+}
+        
+        @media (prefers-color-scheme: dark){
+  .site-logo{
+    /* makes white parts interact with the dark header instead of sitting opaque */
+    mix-blend-mode: screen;   /* try 'lighten' if screen is too strong */
+    background: transparent;  /* ensure no CSS bg */
+  }
+}
+
+/* NEW: Sustainability Grid Layout */
+.sustainability-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.sustainability-content-left {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sustainability-image {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sustainability-content-right {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sustainability-item {
+    text-align: left;
+    padding: 2rem;
+    border: 1px solid var(--stone);
+    background: var(--ivory);
+    transition: all 0.4s ease;
+}
+
+.sustainability-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--sage);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.sustainability-item .mission-icon {
+    margin: 0 0 1rem 0;
+    width: 60px;
+    height: 60px;
+}
+
+/* Responsive styles for sustainability grid */
+@media (max-width: 1024px) {
+    .sustainability-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .sustainability-content-left,
+    .sustainability-image,
+    .sustainability-content-right {
+        grid-column: 1;
+    }
+    
+    .sustainability-content-left,
+    .sustainability-content-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sustainability-content-left,
+    .sustainability-content-right {
+        grid-template-columns: 1fr;
+    }
+    
+    .sustainability-image img {
+        height: 400px !important;
+        max-height: 400px !important;
+    }
+}
+    </style>
+
+
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="/Home" class="logo">
+                <picture>
+    <!-- Dark mode version (slightly brighter/cooler glow) -->
+    <source srcset="/files/Secret Linen - Logo.png" media="(prefers-color-scheme: dark)">
+    <!-- Default (light mode) -->
+    <img src="/files/Secret Linen - Logo.png" alt="Secret Linen" class="site-logo">
+                </picture> </a>
+            
+                        <!-- Desktop Navigation -->
+            <nav class="desktop">
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Uniforms">Uniforms</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About" class="nav-about active">About</a></li>
+                    <li><a href="/About#contact" class="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle">☰</button>
+            
+                        <!-- Mobile Navigation -->
+            <nav class="mobile">
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Uniforms">Uniforms</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About" class="nav-about active">About</a></li>
+                    <li><a href="/About#contact" class="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Page -->
+    <div id="about-page" class="page-content active">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <span class="page-eyebrow">Our Story</span>
+                <h1>Heritage Woven with Purpose</h1>
+                <p class="page-description">
+                    Discover our journey and the values that guide every thread we create at Secret Linen.
+                </p>
+            </div>
+        </section>
+
+        <!-- Heritage Section -->
+        <section class="section">
+            <div class="container">
+                <div class="heritage-grid">
+                    <div class="heritage-image fade-in">
+                        <img src="/files/Linen Heritage.jpg" alt="Secret Linen Heritage">
+                    </div>
+                    <div class="heritage-content fade-in">
+                        <span class="page-eyebrow">Since 2024</span>
+                        <h2>A Legacy Woven with Care</h2>
+                        <p>
+                            At Secretlinen, we foster respect, trust, and confidence while embracing innovation, empowerment, and open feedback to inspire growth. Committed to collaboration, diversity, and accountability, we cultivate a supportive global environment, uniting teams to achieve shared success. Members of the Secretlinen team are passionate in all they do, working hard while having fun. </p> <p>
+Working at Secretlinen is more than a job. It's an opportunity to become a tastemaker in your own right: an ultimate expert, a style curator, a trusted advisor who lives and breathes the world of luxury. Here, you'll cultivate your passion for design and luxury living, refine your cultural fluency and network, and build meaningful relationships that shape your own career journey and personal brand.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mission-section fade-in">
+                    <h3 style="text-align: center; margin-bottom: 3rem;">Our Commitment to Excellence</h3>
+                    <div class="mission-grid">
+                        <div class="mission-item">
+                            <div class="mission-icon">🎯</div>
+                            <h4 class="mission-title">Quality First</h4>
+                            <p class="mission-description">Every piece meets our rigorous standards for durability, comfort, and beauty</p>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon">🌱</div>
+                            <h4 class="mission-title">Sustainable Practices</h4>
+                            <p class="mission-description">Natural fibers, eco-friendly dyes, and responsible manufacturing processes</p>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon">👨‍👩‍👧‍👦</div>
+                            <h4 class="mission-title">Family Values</h4>
+                            <p class="mission-description">Three generations of expertise and personal attention to every client</p>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon">⚡</div>
+                            <h4 class="mission-title">Innovation</h4>
+                            <p class="mission-description">Blending traditional techniques with modern technology and design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Values Section -->
+                <div style="margin-top: 4rem;">
+                    <div class="heritage-content fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                        <span class="page-eyebrow">Our Philosophy</span>
+                        <h2>WEAVING A RESPONSIBLE FUTURE</h2>
+                        <p>
+                            At Secretlinen, we celebrate masterful craftsmanship, iconic Italian design and continuous innovation. We believe design has the power to transform. From how we dream and think creatively to how we interact with the world, design encapsulates a meaningful global conversation. As artisans who have mastered our craft, we are now dedicating resources to integrate sustainability and social responsibility into our design processes in the name of respect for our environment and in an effort to improve our global community. 
+                        </p>
+                        <p> Secretlinen's path forward is based on our belief that, together with our colleagues, our partners and our industry at-large, we can bring about meaningful change that will create a positive impact on our world and future generations.
+                        </p>
+                    </div>
+
+                    <div class="values-grid">
+                        <div class="value-card fade-in">
+                            <div class="value-number">01</div>
+                            <h3 class="value-title">Craftsmanship</h3>
+                            <p class="value-description">
+                             Years of textile expertise passed through generations. Every stitch tells a story of dedication and attention to detail that defines true luxury.
+                            </p>
+                        </div>
+
+                        <div class="value-card fade-in">
+                            <div class="value-number">02</div>
+                            <h3 class="value-title">Innovation</h3>
+                            <p class="value-description">
+                                Embracing new techniques while honoring traditional methods. We continuously evolve to meet the changing needs of hospitality and luxury living.
+                            </p>
+                        </div>
+
+                        <div class="value-card fade-in">
+                            <div class="value-number">03</div>
+                            <h3 class="value-title">Sustainability</h3>
+                            <p class="value-description">
+                                100% cotton, fully sun-dried. Premium sun-dried cotton, Long fibres. We believe luxury should be responsible and enduring. 
+                            </p>
+                        </div>
+
+                        <div class="value-card fade-in">
+                            <div class="value-number">04</div>
+                            <h3 class="value-title">Collaboration</h3>
+                            <p class="value-description">
+                                Working closely with clients to create bespoke solutions. Your vision becomes our mission, and your success is our pride.
+                            </p>
+                        </div>
+
+                        <div class="value-card fade-in">
+                            <div class="value-number">05</div>
+                            <h3 class="value-title">Excellence</h3>
+                            <p class="value-description">
+                                Never compromising on quality, from raw material selection to final inspection. Excellence is not an act, but a habit.
+                            </p>
+                        </div>
+
+                        <div class="value-card fade-in">
+                            <div class="value-number">06</div>
+                            <h3 class="value-title">Heritage</h3>
+                            <p class="value-description">
+                                Preserving traditional techniques while building for the future. Our legacy is woven into every textile we create.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sustainability Section - REVISED LAYOUT -->
+                <section class="section" style="margin-top: 2rem;">
+                    <div class="container">
+                        <div class="heritage-content fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                            <span class="page-eyebrow">Our Promise</span>
+                            <h2>Sustainability: Evolving the Better Future</h2>
+                            <p style="font-size: 1.25rem; color: #555; line-height: 1.7; font-style: italic;">
+                                We are glad for our progress so far. We impress upon our customers that better has no bounds.
+                            </p>
+                        </div>
+
+                        <!-- NEW GRID LAYOUT -->
+                        <div class="sustainability-grid fade-in">
+                            <!-- Left Column: First Two Content Items -->
+                            <div class="sustainability-content-left">
+                                <div class="sustainability-item">
+                                    <div class="mission-icon">🌱</div>
+                                    <h4 class="mission-title">Confidence in Responsibility</h4>
+                                    <p class="mission-description">
+                                        We hope you feel confident that the products you buy from us are made both responsibly and sustainably.
+                                    </p>
+                                </div>
+                                
+                                <div class="sustainability-item">
+                                    <div class="mission-icon">👐</div>
+                                    <h4 class="mission-title">Empowering Communities</h4>
+                                    <p class="mission-description">
+                                        A desire to return power to the handloom weavers of communities.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Middle Column: Image -->
+                            <div class="sustainability-image">
+                                <img src="/Contents/Sustainability.jpg" alt="Sustainable Linen Production" style="width: 100%; height: 420px; object-fit: cover; border-radius: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            </div>
+
+                            <!-- Right Column: Last Two Content Items -->
+                            <div class="sustainability-content-right">
+                                <div class="sustainability-item">
+                                    <div class="mission-icon">⚖️</div>
+                                    <h4 class="mission-title">Supplier Accountability</h4>
+                                    <p class="mission-description">
+                                        We progress to ensure our suppliers live up to our agreement. We employ dedicated sustainability staff in our production.
+                                    </p>
+                                </div>
+                                
+                                <div class="sustainability-item">
+                                    <div class="mission-icon">🌾</div>
+                                    <h4 class="mission-title">Sustainable Sourcing</h4>
+                                    <p class="mission-description">
+                                        We care to only source sustainable materials from farms with good management.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sustainable Practices Grid -->
+                        <div class="mission-section fade-in" style="background: var(--linen); border-color: var(--sage); margin-top: 4rem;">
+                            <h3 style="text-align: center; margin-bottom: 3rem; color: var(--charcoal);">Our Sustainable Practices</h3>
+                            <div class="mission-grid">
+                                <div class="mission-item">
+                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">♻️</div>
+                                    <h4 class="mission-title">Circular Approach</h4>
+                                    <p class="mission-description">
+                                        Designing for longevity and end-of-life recyclability
+                                    </p>
+                                </div>
+                                <div class="mission-item">
+                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">💚</div>
+                                    <h4 class="mission-title">Natural Fibers</h4>
+                                    <p class="mission-description">
+                                        100% organic cotton and biodegradable materials
+                                    </p>
+                                </div>
+                                <div class="mission-item">
+                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">🤝</div>
+                                    <h4 class="mission-title">Community Focus</h4>
+                                    <p class="mission-description">
+                                        Supporting traditional weavers and artisan communities
+                                    </p>
+                                </div>
+                                <div class="mission-item">
+                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">🌍</div>
+                                    <h4 class="mission-title">Global Standards</h4>
+                                    <p class="mission-description">
+                                        Adhering to international sustainability certifications
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact-page" class="page-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <span class="page-eyebrow">Get In Touch</span>
+                <h1>Connect With Secret Linen</h1>
+                <p class="page-description">
+                    Ready to transform your space with luxury textiles? Reach out to our team for consultations, partnerships, or any inquiries.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-in">
+                        <h3 style="margin-bottom: 2rem;">Visit Our Studio</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Secret Linen Studio</h4>
+                                <p>SECRETLINEN-ADAMBAKKAM</p>
+                                <p>#59, 1st Floor, Balaji Nagar Main Road</p>
+                                <p>Adambakkam, Chennai</p>
+                                <p>Zipcode: 600088</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-details">
+                                <h4>Business Hours</h4>
+                                <p><strong>Monday - Saturday:</strong> 10:00 AM - 9:00 PM</p>
+                                <p><strong>Sunday:</strong> 11:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Contact Information</h4>
+                                <p>Phone: +91-9003555940</p>
+                                <p>Email: secretlinenindia@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h4>Business Inquiries</h4>
+                                <p>Hospitality Partnerships</p>
+                                <p>Corporate Gifting Programs</p>
+                                <p>Customization Projects</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <a href="tel:+919003555940" class="btn btn-primary" style="display: inline-flex; margin-right: 1rem;">
+                                Call Now
+                            </a>
+                            <a href="mailto:secretlinenindia@gmail.com" class="btn btn-light">
+                                Email Us
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form fade-in">
+                        <h3 style="margin-bottom: 2rem;">Send Us a Message</h3>
+                        
+                        <!-- Form Status Messages -->
+                        <div id="formStatus" class="form-status"></div>
+                        
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name *</label>
+                                <input type="text" id="name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="company">Company/Organization</label>
+                                <input type="text" id="company" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="service">Service Interest</label>
+                                <select id="service" class="form-select">
+                                    <option value="">Select a service</option>
+                                    <option value="corporate-gifting">Corporate Gifting</option>
+                                    <option value="hospitality">Hospitality Partnership</option>
+                                    <option value="customization">Customization</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message *</label>
+                                <textarea id="message" class="form-textarea" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="map-section fade-in">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Find Our Studio</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.347476188198!2d80.199374!3d13.010595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52679e96f7e7c3%3A0x7ddbe0b8b84e3c1e!2sBalaji%20Nagar%2C%20Adambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600088!5e0!3m2!1sen!2sin!4v1647854328746!5m2!1sen!2sin" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <picture>
+                        <!-- Dark mode version -->
+                        <source srcset="/files/Secret Linen - Logo.png" media="(prefers-color-scheme: dark)">
+                        <!-- Default (light mode) -->
+                        <img src="/files/Secret Linen - Logo.png" alt="Secret Linen" class="site-logo">
+                    </picture>
+                </div>
+                <p class="footer-description">
+                    Years of crafting exceptional textiles for hospitality and refined living. Quiet luxury, woven into life.
+                </p>
+                
+                <!-- Instagram Icon -->
+                <div class="footer-social">
+                    <a href="https://instagram.com/secretlinenindia" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>@secretlinen</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links-column">
+                <h4 class="footer-heading">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/About" class="nav-about">Our Story</a></li>
+                    <li><a href="/About#contact" class="nav-contact">Contact</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-column">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="/Services#gifting">Corporate Gifting</a></li>
+                    <li><a href="/Services#hospitality">Hospitality</a></li>
+                    <li><a href="/Services#customization">Customization</a></li>
+                    <li><a href="/Services#consultation">Consultation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-column">
+                <h4 class="footer-heading">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="nav-about">Our Story</a></li>
+                    <li><a href="#" class="nav-contact">Contact</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Secret Linen. All rights reserved. Crafted with ❤️ by 69TM</p>
+        </div>
+    </div>
+</footer>
+
+        <script>        
+        // Page Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutPage = document.getElementById('about-page');
+            const contactPage = document.getElementById('contact-page');
+            const aboutLinks = document.querySelectorAll('.nav-about');
+            const contactLinks = document.querySelectorAll('.nav-contact');
+            
+            // Function to show About page
+            function showAboutPage() {
+                aboutPage.classList.add('active');
+                contactPage.classList.remove('active');
+                
+                // Update navigation active states
+                aboutLinks.forEach(link => {
+                    link.classList.add('active');
+                    link.setAttribute('href', '/About.html');
+                });
+                contactLinks.forEach(link => {
+                    link.classList.remove('active');
+                    link.setAttribute('href', '/About.html#contact');
+                });
+                
+                // Update page title
+                document.title = 'About | Secret Linen - Heritage & Legacy';
+                
+                // Update URL without refresh
+                history.pushState({ page: 'about' }, '', '/About.html');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+            
+            // Function to show Contact page
+            function showContactPage() {
+                contactPage.classList.add('active');
+                aboutPage.classList.remove('active');
+                
+                // Update navigation active states
+                contactLinks.forEach(link => {
+                    link.classList.add('active');
+                    link.setAttribute('href', '/About.html#contact');
+                });
+                aboutLinks.forEach(link => {
+                    link.classList.remove('active');
+                    link.setAttribute('href', '/About.html');
+                });
+                
+                // Update page title
+                document.title = 'Contact | Secret Linen - Get In Touch';
+                
+                // Update URL without refresh
+                history.pushState({ page: 'contact' }, '', '/About.html#contact');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+            
+            // Check URL on page load
+            function checkInitialPage() {
+                if (window.location.hash === '#contact') {
+                    showContactPage();
+                } else {
+                    showAboutPage();
+                }
+            }
+            
+            // Navigation event listeners
+            aboutLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Only prevent default for same-page navigation
+                    if (this.getAttribute('href').startsWith('/About.html')) {
+                        e.preventDefault();
+                        showAboutPage();
+                    }
+                    // External links (like /home, /collections) will work normally
+                });
+            });
+            
+            contactLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Only prevent default for same-page navigation
+                    if (this.getAttribute('href').startsWith('/About.html')) {
+                        e.preventDefault();
+                        showContactPage();
+                    }
+                    // External links will work normally
+                });
+            });
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function(event) {
+                if (window.location.hash === '#contact') {
+                    showContactPage();
+                } else {
+                    showAboutPage();
+                }
+            });
+            
+            // Initialize page based on current URL
+            checkInitialPage();
+            
+            // Scroll animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const mobileNav = document.querySelector('nav.mobile');
+            
+            if (mobileToggle && mobileNav) {
+                mobileToggle.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('nav.mobile a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.remove('active');
+                    });
+                });
+            }
+            
+// Contact form submission using Google Apps Script
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const company = document.getElementById('company').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        // Simple validation
+        if (!name || !email || !message) {
+            showFormStatus('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showFormStatus('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Update button state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            // YOUR NEW WEB APP URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxdkVYYKoGHBTNeQ5kN_PueZ4Ai-7Uq5SRX__jO3hYcHLYAuvZ91Qmzc3dK6ZResLxk/exec';
+            
+            // In your HTML form submission
+            const formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone || '');
+            formData.append('company', company || '');
+            formData.append('service', service || '');
+            formData.append('message', message);
+            formData.append('timestamp', new Date().toLocaleString('en-IN'));
+
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            console.log('Server response:', result);
+            
+            if (result.success) {
+                showFormStatus('Thank you for your message! We will get back to you within 24 hours.', 'success');
+                contactForm.reset();
+                
+                // Auto-hide success message after 5 seconds
+                setTimeout(() => {
+                    if (formStatus) {
+                        formStatus.style.display = 'none';
+                    }
+                }, 5000);
+            } else {
+                throw new Error(result.message);
+            }
+            
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showFormStatus('There was an error sending your message. Please try again.', 'error');
+        } finally {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Function to display form status messages
+function showFormStatus(message, type) {
+    if (formStatus) {
+        formStatus.textContent = message;
+        formStatus.className = 'form-status';
+        formStatus.classList.add(type);
+        formStatus.style.display = 'block';
+    }
+}
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(253, 252, 248, 0.98)';
+                    header.style.padding = '0.5rem 0';
+                } else {
+                    header.style.background = 'rgba(253, 252, 248, 0.95)';
+                    header.style.padding = '0';
+                }
+            });
+        });
+    </script>

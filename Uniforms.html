@@ -1,0 +1,1312 @@
+<!-- Save as Uniforms.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniform Solutions | Secret Linen - Expertise in Professional Attire</title>
+    <meta name="description" content="Discover our story in uniform manufacturing. With decades of expertise, we craft professional attire for healthcare, hospitality, corporate, and industrial sectors.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --ivory: #fdfcf8;
+            --linen: #f5f1e8;
+            --stone: #e8e2d6;
+            --clay: #d8cdbc;
+            --charcoal: #1a1a1a;
+            --bronze: #a8926e;
+            --bronze-light: #c4b59a;
+            --sage: #a8b8a5;
+            --serif: 'Playfair Display', serif;
+            --sans: 'Inter', sans-serif;
+            --section-padding: clamp(80px, 5vw, 140px);
+            --container-width: min(1420px, 94%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--serif);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+        }
+        
+        .container {
+            width: var(--container-width);
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: var(--section-padding) 0;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            overflow: visible;
+            z-index: 1000;
+            background: rgba(253, 252, 248, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 226, 214, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.1rem 0.1rem;
+            position: relative;
+            height: 72px;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .logo:hover {
+            transform: translateX(-4px);
+        }
+        
+        /* Desktop Navigation */
+        nav.desktop {
+            display: flex;
+        }
+        
+        nav.desktop ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        nav.desktop a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25rem 0;
+            line-height: 1.1;
+            transition: all 0.3s ease;
+        }
+        
+        nav.desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bronze);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        nav.desktop a:hover {
+            color: var(--bronze);
+        }
+        
+        nav.desktop a:hover:after {
+            width: 100%;
+        }
+
+        nav.desktop a.active {
+            color: var(--bronze);
+        }
+        
+        nav.desktop a.active:after {
+            width: 100%;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            padding: 0.5rem;
+        }
+        
+        .mobile-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        nav.mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 252, 248, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--stone);
+            padding: 1.5rem 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        nav.mobile.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        nav.mobile ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        nav.mobile a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        nav.mobile a:hover {
+            color: var(--bronze);
+            border-bottom-color: var(--bronze);
+        }
+        
+        /* Page Header */
+        .page-header{
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            color: var(--charcoal);
+            z-index: 0;
+            background: url('/Uniforms/hero.png') no-repeat center center;
+            background-size: cover;
+            /*background: linear-gradient(135deg, #f5f1e8 0%, #e8e2d6 100%);*/
+        }
+
+        .page-header::before{
+            content:"";
+            position:absolute; inset:0;
+            background: rgba(255,255,255,0.7);
+            z-index:0;
+        }
+        .page-header .container{
+            position:relative; z-index:1;
+        }
+        
+        .page-eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--bronze);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--charcoal);
+            font-weight: 300;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        
+        /* Story Navigation */
+        .story-nav {
+            position: sticky;
+            top: 72px;
+            background: var(--ivory);
+            border-bottom: 1px solid var(--stone);
+            z-index: 100;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            background: rgba(253, 252, 248, 0.95);
+        }
+        
+        .story-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .story-nav-link {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            user-select: none;
+            border-radius: 4px;
+        }
+
+        .story-nav-link:hover {
+            color: var(--bronze);
+            background: rgba(168, 146, 110, 0.05);
+        }
+
+        .story-nav-link.active {
+            color: var(--bronze);
+            font-weight: 500;
+        }
+
+        .story-nav-link.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--bronze);
+            border-radius: 50%;
+        }
+        
+        /* Adjust scroll margin for proper anchor linking */
+        .story-section {
+            scroll-margin-top: 180px;
+        }
+
+        /* Story Content Styles */
+        .story-header {
+            margin-bottom: 3rem;
+        }
+        
+        .section-eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--bronze);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .section-intro {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 1.5rem auto 0;
+        }
+        
+        /* Content Grid with Images */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+        
+        .content-text {
+            padding: 2rem;
+        }
+        
+        .content-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            height: 400px;
+        }
+        
+        .content-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .content-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--bronze);
+            font-weight: bold;
+        }
+        
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: var(--ivory);
+            border: 1px solid var(--stone);
+            border-radius: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--bronze);
+        }
+        
+        .team-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Operation Cards */
+        .operation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .operation-card {
+            padding: 2.5rem;
+            background: var(--ivory);
+            border: 1px solid var(--stone);
+            border-radius: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .operation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--bronze);
+        }
+        
+        .operation-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bronze);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--ivory);
+            font-size: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .uniform-cta {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2a2a2a 100%);
+            color: var(--ivory);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+        
+        .uniform-cta::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 250px;
+            height: 250px;
+            background: var(--bronze);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+        
+        .uniform-cta h2 {
+            color: var(--ivory);
+            margin-bottom: 1.2rem;
+        }
+        
+        .uniform-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 1.8rem;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 400;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--charcoal);
+            color: var(--ivory);
+            border-color: var(--charcoal);
+        }
+        
+        .btn-primary:hover {
+            background: var(--bronze);
+            color: var(--ivory);
+            border-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+        
+        .btn-light {
+            background: var(--ivory);
+            color: var(--charcoal);
+            border-color: var(--ivory);
+        }
+        
+        .btn-light:hover {
+            background: var(--bronze);
+            color: var(--ivory);
+            border-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--ivory);
+            padding: 3rem 0 1.5rem;
+            width: 100%;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            grid-column: span 2;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 20px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo .site-logo {
+            height: 18px;
+            width: 120px;
+            filter: drop-shadow(0 0 8px rgba(168, 146, 110, 0.2));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .footer-logo .site-logo:hover {
+            transform: scale(1.12);
+            filter: drop-shadow(0 0 12px rgba(168, 146, 110, 0.3));
+        }
+        
+        .footer-description {
+            opacity: 0.7;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            max-width: 400px;
+        }
+        
+        .footer-heading {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--ivory);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(253, 252, 248, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--bronze);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(253, 252, 248, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 2.5rem;
+            }
+            
+            .footer-brand {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav.desktop {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav.mobile {
+                display: block;
+            }
+            
+            .story-nav {
+                padding: 1rem 0;
+            }
+            
+            .story-nav-container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .story-nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .story-nav-link.active:after {
+                bottom: -1rem;
+            }
+            
+            .story-section {
+                scroll-margin-top: 160px;
+            }
+            
+            .content-grid {
+                gap: 2rem;
+            }
+            
+            .content-image {
+                height: 300px;
+            }
+            
+            .team-grid,
+            .operation-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-brand {
+                grid-column: 1;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .footer-logo {
+                justify-content: center;
+            }
+            
+            .footer-description {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .footer-links-column {
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            footer {
+                padding: 3rem 1rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-text {
+                padding: 1rem;
+            }
+            
+            .operation-card {
+                padding: 1.5rem;
+            }
+            
+            .footer-content {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Logo styling */
+        .site-logo {
+            height: 12px;
+            width: 120px;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 0 12px rgba(168,146,110,0.25));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 18px rgba(168, 146, 110, 0.4));
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="/Home" class="logo">
+                <picture>
+                <!-- Dark mode version (slightly brighter/cooler glow) -->
+                <source srcset="/files/Secret Linen - Logo.png" media="(prefers-color-scheme: dark)">
+                <!-- Default (light mode) -->
+                <img src="/files/Secret Linen - Logo.png" alt="Secret Linen" class="site-logo">
+                </picture>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop">
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Uniforms" class="active">Uniforms</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/About#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle">☰</button>
+            
+            <!-- Mobile Navigation -->
+            <nav class="mobile">
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Uniforms" class="active">Uniforms</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/About#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="page-eyebrow">School Uniform Expertise</span>
+            <h1>Crafting Identity Through Quality Attire</h1>
+            <p class="page-description">
+                Since 2024, Secret Linen has been imagining clothes that think about the daily life of those who wear them, offering sustainable, qualitative, and easy-going pieces for students.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Navigation -->
+    <nav class="story-nav">
+        <div class="container story-nav-container">
+            <a href="#who-we-are" class="story-nav-link active">Who We Are</a>
+            <a href="#how-we-work" class="story-nav-link">How We Work</a>
+            <a href="#our-operations" class="story-nav-link">Our Operations</a>
+            <a href="#kids-supplies" class="story-nav-link">Kids Supplies</a>
+        </div>
+    </nav>
+
+    <!-- Who We Are Section -->
+    <section id="who-we-are" class="section story-section">
+        <div class="container">
+            <div class="story-header">
+                <span class="section-eyebrow">Our Expertise</span>
+                <h2>Who We Are</h2>
+                <p class="section-intro">
+                    Family life is at the origin of our brand! We have always offered sustainable, qualitative and easy-going pieces.
+                </p>
+            </div>
+
+            <!-- The Weave Section -->
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>THE WEAVE: Our Expertise for Years</h3>
+                    <p>Since 2024, the brand Secret Linen has imagined clothes thinking about the daily life of those who wear them. Indeed, family life is at the origin of the brand! We have always offered sustainable, qualitative and easy-going pieces.</p>
+                    <p>Our uniform outfits benefit from this heritage: we are committed to offering students comfortable, resistant and easy to maintain pieces for a simplified daily life.</p>
+                </div>
+                <div class="content-image">
+                    <!-- Image Placeholder 1: Replace with your uniform image -->
+                    <img src="/Uniforms/Whoweare.jpg" alt="The Weave - Our Heritage" style="background: #e8e2d6;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; width: 100%; height: 100%; color: #888; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+
+            <!-- From Accessory to Complete Outfit -->
+            <div class="content-grid">
+                <div class="content-image">
+                    <!-- Image Placeholder 2: Replace with your uniform image -->
+                    <img src="/Uniforms/ATC.png" style="background: #f5f1e8;">
+                    <div style="position: absolute; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem; object-fit: contain;"></div>
+                </div>
+                <div class="content-text">
+                    <h3>From the Accessory to the Complete Outfit</h3>
+                    <p>Secret Linen is a selection of quality raw materials, classic and fair cuts, a timeless elegance.</p>
+                    <p>Our style office designs and develops pleasant living clothes, made in quality fabrics and easy to care. We are committed to the fact that students adhere to their outfit: that is why we privilege models that are both current and functional.</p>
+                </div>
+            </div>
+
+            <!-- Quality Commitment -->
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Place to Quality!</h3>
+                    <p>We owe you the quality: for this reason, we favor natural materials and pay particular attention to the finishes.</p>
+                    <p>We scrupulously control every stage of creation: we manufacture hand in hand with our suppliers, manufacturers and historical workshops, with whom we have built a trusted collaboration.</p>
+                    <p>Quality, comfort, design made in France and tailor-made advice: we imagine with you a uniform in the image of your establishment.</p>
+                    <p>To find out more, contact us!</p>
+                </div>
+                <div class="content-image">
+                    <!-- Image Placeholder 3: Replace with your quality control image -->
+                    <img src="/Uniforms/Uniform3.jpg" alt="Quality Control Process" style="background: #d8cdbc;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="section story-section" style="background: var(--linen);">
+        <div class="container">
+            <div class="story-header">
+                <span class="section-eyebrow">Our Process</span>
+                <h2>How We Work</h2>
+                <p class="section-intro">
+                    We take special care to accompany you in the implementation of your uniform with personalized follow-up and simplified logistics.
+                </p>
+            </div>
+
+            <!-- Quality Products -->
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Quality Products</h3>
+                    <p>Our products are designed to be worn every day. They are customizable, quality controlled and pleasant to wear.</p>
+                    <p>Robust, our products withstand time and thus limit overconsumption and environmental impact.</p>
+                </div>
+                <div class="content-image">
+                    <!-- Image Placeholder 4: Replace with your product durability image -->
+                    <img src="/Uniforms/Uniform1.jpg" alt="Durable Products" style="background: #f5f1e8;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+
+            <!-- Personalized Follow-up -->
+            <div class="content-grid">
+                <div class="content-image">
+                    <!-- Image Placeholder 5: Replace with your consultation image -->
+                    <img src="/Uniforms/Personalized followup.png" alt="Personalized Consultation" style="background: #e8e2d6;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+                <div class="content-text">
+                    <h3>A Personalized Follow-up</h3>
+                    <p>We take special care to accompany you in the implementation of your uniform:</p>
+                    <ul class="feature-list">
+                        <li>We move to your establishment and develop together your locker room project.</li>
+                        <li>Our office of style, located in the Chennai, then offers you the outfits in accordance with your expectations and the image of your establishment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Simplified Logistics 
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Simplified Logistics</h3>
+                    <p>After having imagined and created together the uniform of your school, Secret Linen puts at your disposal an exclusive online store on secretlinen.in</p>
+                    <p>Parents place orders themselves on this dedicated web page.</p>
+                    <p>Their outfits are then delivered to their home, in your establishment or in the relay point of their choice.</p>
+                    <p>You can also choose the "global" order, delivered directly to your establishment. You are the one who manages the distribution to the families.</p>
+                </div> -->
+                <!--<div class="content-image">
+                     Image Placeholder 6: Replace with your logistics image 
+                    <img src="/Uniforms/Uniform2.jpg" alt="Logistics & Delivery" style="background: #d8cdbc;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+        </div>-->
+    </section>
+
+    <!-- Our Operations Section -->
+    <section id="our-operations" class="section story-section">
+        <div class="container">
+            <div class="story-header">
+                <span class="section-eyebrow">Behind the Scenes</span>
+                <h2>How Secret Linen Operates</h2>
+                <p class="section-intro">
+                    Choose between our two flexible operation models, both designed for your convenience and satisfaction.
+                </p>
+            </div>
+
+            <!-- Operation Models 
+            <div class="operation-cards">
+                 
+                <div class="operation-card">
+                    <div class="operation-icon">📦</div>
+                    <h3>The Order Without Commitment</h3>
+                    <p><strong>You order the full stock at once. As soon as the production is finalized, we deliver the entire order to the address of your choice.</strong></p>
+                    <ol style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 1rem;">We imagine together the uniform in the image of your establishment.</li>
+                        <li style="margin-bottom: 1rem;">You place order for all your uniform that will be delivered to you in full to your establishment.</li>
+                        <li>You are thus autonomous on the management of your stock and the distribution to families within your establishment.</li>
+                    </ol>
+                </div>-->
+
+                <!-- Partner Offer 
+                <div class="operation-card">
+                    <div class="operation-icon">🤝</div>
+                    <h3>The Partner Offer</h3>
+                    <p><strong>Under a preferred contract, orders and stocks are managed by us.</strong></p>
+                    <ol style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 1rem;">After having imagined and created together the uniform of your establishment, we put at your disposal an exclusive and secure online store on secretlinen.in</li>
+                        <li style="margin-bottom: 1rem;">Parents place an order on this dedicated website themselves.</li>
+                        <li>Within a period agreed with you and necessary for the manufacture of the items ordered by the parents, orders are delivered either at home, in your establishment or in the relay point of their choice.</li>
+                    </ol>
+                </div>
+            </div> -->
+
+            <!-- Team at Your Service -->
+            <div class="content-grid" style="margin-top: 6rem;">
+                <div class="content-text">
+                    <h3>A Team at Your Service</h3>
+                    <p><strong>A single point of contact accompanies you from the creation to the delivery of the products.</strong></p>
+                    <p>Thanks to our offices in the Chennai region, our stylists are close to your expectations and offer you a daily responsiveness.</p>
+                    <p>Passionate, our teams aim for your permanent satisfaction.</p>
+                </div>
+                <div class="content-image">
+                    <!-- Image Placeholder 7: Replace with your team image -->
+                    <img src="/Uniforms/Team service.png" alt="Our Team" style="background: #f5f1e8;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+
+            <!-- Priority to Quality -->
+            <div class="content-grid">
+                <div class="content-image">
+                    <!-- Image Placeholder 8: Replace with your quality assurance image -->
+                    <img src="/Uniforms/Quality Assurance.png" alt="Quality Assurance" style="background: #e8e2d6;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+                <div class="content-text">
+                    <h3>Priority to Quality!</h3>
+                    <p><strong>As part of our quality approach, we have set up a structure dedicated to quality control from design to delivery.</strong></p>
+                    <p>We are committed to designing lines of pleasant clothes, beautiful clothing, and made in natural and comfortable materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECRET LINEN KIDS SUPPLIES Section -->
+    <section id="kids-supplies" class="section story-section" style="background: var(--linen);">
+        <div class="container">
+            <div class="story-header">
+                <span class="section-eyebrow">Child Safety & Quality</span>
+                <h2>SECRET LINEN KIDS SUPPLIES</h2>
+                <p class="section-intro">
+                    At Secret Linen, we understand that children's safety comes first. That's why every product in our Kids' Uniform Collection is carefully designed and manufactured in compliance with recognized kids' safety norms.
+                </p>
+            </div>
+
+            <!-- Safety & Quality Content -->
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Certified Safe Materials</h3>
+                    <p>All fabrics are tested to ensure they are free from harmful chemicals and safe for sensitive skin. We prioritize materials that are breathable, hypoallergenic, and comfortable for all-day wear.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Independent Third-Party Inspection</h3>
+                    <p>To ensure the highest standards, every batch of our uniforms undergoes independent third-party inspection. These inspections are conducted under the internationally recognized AQL 2.5 standard, which means:</p>
+                    
+                    <ul class="feature-list">
+                        <li>Rigorous quality checks on stitching, fabric, and finishing</li>
+                        <li>Undergone 100% metal detection</li>
+                        <li>No sharp edges, hazardous accessories, or unsafe fastenings</li>
+                        <li>Assurance that only products meeting the approved quality level reach you</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><em>Every detail is crafted with care to ensure maximum safety and comfort for young wearers.</em></p>
+                </div>
+                <div class="content-image">
+                    <!-- Image Placeholder for Kids Uniforms Safety -->
+                    <img src="/Uniforms/Kids Safety.png" alt="Kids Uniform Safety & Quality" style="background: #f5f1e8;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+
+            <!-- SCHOOL UNIFORMS Focus -->
+            <div class="content-grid" style="margin-top: 4rem;">
+                 <div class="content-image"> 
+                    <img src="/Uniforms/School uniforms Comfort.png" alt="Comfortable School Uniforms" style="background: #e8e2d6;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                </div> 
+                <div class="content-text">
+                    <h3>SCHOOL UNIFORMS</h3>
+                    
+                    <h4 style="margin-top: 1.5rem; color: var(--bronze); font-weight: 500;">Safety First</h4>
+                    <p>Every kid's product is verified under recognized child safety norms — ensuring fabrics are skin-friendly, free from harmful chemicals, and designed with child-safe features.</p>
+                    
+                    <ul class="feature-list">
+                        <li>Non-toxic dyes and prints</li>
+                        <li>Secure, child-friendly fastenings</li>
+                        <li>Reinforced stitching for durability</li>
+                        <li>Flame-retardant materials where required</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1.5rem; color: var(--bronze); font-weight: 500;">Comfort & Durability</h4>
+                    <p>Our uniforms are crafted to keep children comfortable throughout the day while lasting through active school routines. Features include:</p>
+                    
+                    <ul class="feature-list">
+                        <li>Breathable fabrics for temperature regulation</li>
+                        <li>Flexible designs for active movement</li>
+                        <li>Easy-care materials for busy families</li>
+                        <li>Growth-friendly adjustments where possible</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem; font-weight: 400;">
+                        We believe that when children feel comfortable and safe in their uniforms, they can focus on what matters most — learning and growing.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quality Assurance Summary -->
+            <div class="operation-cards" style="margin-top: 4rem;">
+                <div class="operation-card">
+                    <div class="operation-icon">🛡️</div>
+                    <h3>Safety Certification</h3>
+                    <p>All our kids' uniforms meet or exceed international safety standards, including EN 14682 for children's clothing safety and Oeko-Tex Standard 100 for harmful substances.</p>
+                </div>
+                
+                <div class="operation-card">
+                    <div class="operation-icon">👕</div>
+                    <h3>Comfort Design</h3>
+                    <p>Designed with pediatric comfort in mind — soft seams, tagless labels, and flexible fabrics that move with active children throughout their school day.</p>
+                </div>
+                
+                <div class="operation-card">
+                    <div class="operation-icon">✅</div>
+                    <h3>Quality Guarantee</h3>
+                    <p>Every uniform undergoes multiple quality checks from material selection to final packaging, ensuring long-lasting wear and satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="uniform-cta">
+        <div class="container">
+            <h2>Ready to Define Your School's Identity?</h2>
+            <p>Let's collaborate to create uniforms that reflect your institution's excellence and provide comfort for your students.</p>
+            <div class="cta-buttons">
+                <a href="/About#contact" class="btn btn-light">Start Your Project</a>
+                <a href="/Collections" class="btn btn-primary">View Our Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <picture>
+                            <source srcset="/files/Secret Linen - Logo.png" media="(prefers-color-scheme: dark)">
+                            <img src="/files/Secret Linen - Logo.png" alt="Secret Linen" class="site-logo">
+                        </picture>
+                    </div>
+                    <p class="footer-description">
+                        Crafting professional identities through exceptional uniform design and manufacturing since 2024.
+                    </p>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4 class="footer-heading">Uniform Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="#who-we-are">Who We Are</a></li>
+                        <li><a href="#how-we-work">How We Work</a></li>
+                        <li><a href="#our-operations">Our Operations</a></li>
+                        <li><a href="#kids-supplies">Kids Supplies</a></li>
+                        <li><a href="/Collections">All Collections</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#how-we-work">Personalized Follow-up</a></li>
+                        <li><a href="#our-operations">Order Options</a></li>
+                        <li><a href="#our-operations">Partner Offer</a></li>
+                        <li><a href="#our-operations">Quality Assurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="/About#contact">Contact</a></li>
+                        <li><a href="/Services">Services</a></li>
+                        <li><a href="/Collections">Collections</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Secret Linen. All rights reserved. Crafted with ❤️ by 69TM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const mobileNav = document.querySelector('nav.mobile');
+            
+            if (mobileToggle && mobileNav) {
+                mobileToggle.addEventListener('click', function() {
+                    const isActive = mobileNav.classList.contains('active');
+                    
+                    if (isActive) {
+                        mobileNav.classList.remove('active');
+                        this.innerHTML = '☰';
+                    } else {
+                        mobileNav.classList.add('active');
+                        this.innerHTML = '✕';
+                    }
+                });
+                
+                // Close mobile menu when clicking on links
+                const mobileLinks = document.querySelectorAll('nav.mobile a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('active');
+                        mobileToggle.innerHTML = '☰';
+                    });
+                });
+            }
+            
+            // Simple scroll animation for story navigation
+            const storyNavLinks = document.querySelectorAll('.story-nav-link');
+            
+            storyNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 140;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active state
+                        storyNavLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Update active nav on scroll
+            const storySections = document.querySelectorAll('.story-section');
+            const updateActiveNav = () => {
+                let currentSection = null;
+                const scrollPosition = window.scrollY + 200;
+                
+                storySections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = section;
+                    }
+                });
+                
+                if (currentSection) {
+                    const currentId = currentSection.id;
+                    storyNavLinks.forEach(link => {
+                        const href = link.getAttribute('href').substring(1);
+                        link.classList.toggle('active', href === currentId);
+                    });
+                }
+            };
+            
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav(); // Initial call
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Linen | Luxury Textiles & Bespoke Services</title>
+    <meta name="description" content="Secret Linen - years of craftsmanship in luxury linens for hospitality and refined living. Quiet luxury, woven into life.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Enhanced Color Palette */
+            --foam: #f9fbfd;
+            --ivory: #fdfcf8;
+            --linen: #f5f1e8;
+            --iceblue: #d6ebf3;
+            --stone: #e8e2d6;
+            --clay: #d8cdbc;
+            --charcoal: #1a1a1a;
+            --bronze: #a8926e;
+            --bronze-light: #c4b59a;
+            --sage: #a8b8a5;
+            --darkivory: #f2e58f;
+            --onyx: #353839;
+            --marengo: #4C5866;
+            --gunmetal: #98A9BE;
+            
+            /* Typography */
+            --serif: 'Playfair Display', serif;
+            --sans: 'Inter', sans-serif;
+            
+            /* Spacing */
+            --section-padding: clamp(80px, 10vw, 160px);
+            --container-width: min(1400px, 94%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--serif);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+        }
+        
+        .container {
+            width: var(--container-width);
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: var(--section-padding) 0;
+        }
+        
+        /* Enhanced Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            overflow: visible;
+            z-index: 1000;
+            background: rgba(253, 252, 248, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 226, 214, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.1rem 0.1rem;
+            position: relative;
+            height: 72px;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .logo:hover {
+            transform: translateX(-4px);
+        }
+        
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--bronze), var(--bronze-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ivory);
+            font-family: var(--serif);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .logo-text {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Desktop Navigation */
+        nav.desktop {
+            display: flex;
+        }
+        
+        nav.desktop ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        nav.desktop a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25rem 0;
+            line-height: 1.1;
+            transition: all 0.3s ease;
+        }
+        
+        nav.desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bronze);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        nav.desktop a:hover {
+            color: var(--bronze);
+        }
+        
+        nav.desktop a:hover:after {
+            width: 100%;
+        }
+        
+        nav.desktop a.active {
+            color: var(--bronze);
+        }
+        
+        nav.desktop a.active:after {
+            width: 100%;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+            padding: 0.5rem;
+        }
+        
+        .mobile-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        nav.mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 252, 248, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--stone);
+            padding: 2rem 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        nav.mobile.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        nav.mobile ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        nav.mobile a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            display: block;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        nav.mobile a:hover {
+            color: var(--bronze);
+            border-bottom-color: var(--bronze);
+        }
+        
+        /* Enhanced Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--ivory) 0%, var(--iceblue) 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--stone) 0%, var(--clay) 100%);
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 580px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--bronze);
+            margin-bottom: 1.5rem;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .hero-title {
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.05;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #555;
+            font-weight: 300;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 400;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid transparent;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--charcoal);
+            color: var(--ivory);
+            border-color: var(--charcoal);
+        }
+        
+        .btn-primary:hover {
+            background: var(--bronze);
+            color: var(--ivory);
+            border-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border-color: var(--charcoal);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--charcoal);
+            color: var(--ivory);
+            transform: translateY(-2px);
+        }
+        
+        .hero-visual {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            height: 70%;
+            z-index: 2;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+        
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .hero:hover .hero-visual img {
+            transform: scale(1.03);
+        }
+        
+        /* Enhanced Collections Preview */
+        .collections-preview {
+            background: var(--ivory);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header h2, p{
+            color: var(--ivory);
+        }
+        
+        .section-eyebrow {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--bronze);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 400;
+        }
+
+        .section-eyebrow-showcase {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--marengo);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .collection-card {
+            background: var(--ivory);
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--stone);
+            position: relative;
+        }
+        
+        .collection-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(168, 146, 110, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--bronze);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .collection-card:hover:before {
+            opacity: 1;
+        }
+        
+        .collection-image {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .collection-card:hover .collection-image img {
+            transform: scale(1.08);
+        }
+        
+        .collection-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .collection-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+        
+        .collection-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        
+        .collection-link {
+            color: var(--bronze);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: gap 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+        
+        .collection-link:hover {
+            gap: 1rem;
+        }
+        
+        /* Enhanced Heritage Section - UPDATED FOR MOBILE */
+        .heritage {
+            background: linear-gradient(135deg, var(--iceblue) 0%, var(--stone) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heritage::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: var(--bronze);
+            opacity: 0.03;
+            border-radius: 50%;
+        }
+        
+        .heritage-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+        
+        .heritage-text h2 {
+            margin-bottom: 2rem;
+        }
+        
+        .heritage-text p {
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            color: #555;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        .heritage-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--bronze);
+            display: block;
+            font-family: var(--serif);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+        }
+        
+        .heritage-visual {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+        
+        .heritage-visual img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+        
+        /* Mobile-specific rearrangement for craftsmanship section */
+        @media (max-width: 768px) {
+            .heritage-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .heritage-text {
+                display: contents;
+            }
+            
+            .section-eyebrow {
+                order: 1;
+            }
+            
+            .heritage-text h2 {
+                order: 2;
+                margin-bottom: 1.5rem;
+            }
+            
+            .heritage-text p:first-of-type {
+                order: 3;
+                margin-bottom: 2rem;
+            }
+            
+            .heritage-visual {
+                order: 4;
+                margin: 1rem 0 2rem 0;
+            }
+            
+            .heritage-text p:last-of-type {
+                order: 6;
+                margin-bottom: 0;
+            }
+            
+            .heritage-stats {
+                order: 6;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+        }
+        
+        /* Enhanced Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--iceblue);
+            padding: 2rem 2rem;
+            border-radius: 0;
+            text-align: center;
+            border: 1px solid var(--gunmetal);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Service card background images */
+        .service-card:nth-child(1) {
+            background: 
+                linear-gradient(rgba(184, 220, 243, 0.40), rgba(253, 252, 248, 0.75)),
+                url('/Homepage/Corporate Gifting.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .service-card:nth-child(2) {
+            background: 
+                linear-gradient(rgba(184, 220, 243, 0.75), rgba(253, 252, 248, 0.95)),
+                url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .service-card:nth-child(3) {
+            background: 
+                linear-gradient(rgba(184, 220, 243, 0.69), rgba(253, 252, 248, 0.75)),
+                url('/Homepage/Customization.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: var(--bronze);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--iceblue);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .service-card:hover:before {
+            left: 0;
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--bronze);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: var(--ivory);
+            font-size: 1.75rem;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-title {
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-description {
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Client Showcase Section */
+        .client-showcase {
+            background: var(--gunmetal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .client-showcase::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 280px;
+            height: 320px;
+            background: var(--bronze);
+            opacity: 0.03;
+            border-radius: 50%;
+        }
+        
+        .client-showcase::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -5%;
+            width: 220px;
+            height: 280px;
+            background: var(--white);
+            opacity: 0.03;
+            border-radius: 50%;
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            justify-items: center;
+            align-items: center;
+        }
+        
+       /* Client logo specific styles - IMPROVED FOR ALIGNMENT */
+        .client-logo {
+            width: 100%;
+            max-width: 280px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem;
+        }
+
+        .client-logo a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .client-logo img {
+            max-height: 100%;
+            max-width: 200px;
+            object-fit: contain;
+            height: auto;
+            width: auto;
+            filter: none;
+            mix-blend-mode: normal;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0.8;
+        }
+
+        .client-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+        
+        /* Enhanced CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--gunmetal) 0%, #2a2a2a 100%);
+            color: var(--ivory);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--bronze);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+        
+        .cta-section h2 {
+            color: var(--ivory);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .btn-light {
+            background: var(--ivory);
+            color: var(--charcoal);
+            border-color: var(--ivory);
+        }
+        
+        .btn-light:hover {
+            background: var(--bronze);
+            color: var(--ivory);
+            border-color: var(--bronze);
+        }
+        
+                /* Enhanced Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--ivory);
+            padding: 6rem 0 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .site-logo {
+            height: 14px;
+            width: 120px;
+            filter: drop-shadow(0 0 8px rgba(168, 146, 110, 0.2));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .footer-logo .site-logo:hover {
+            transform: scale(1.12);
+            filter: drop-shadow(0 0 12px rgba(168, 146, 110, 0.3));
+        }
+
+        .footer-description {
+            opacity: 0.7;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 400px;
+        }
+
+        .footer-heading {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--ivory);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(253, 252, 248, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--bronze);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: rgba(253, 252, 248, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .contact-item strong {
+            color: var(--ivory);
+            font-weight: 500;
+        }
+
+        /* Instagram Icon Styles */
+        .footer-social {
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(253, 252, 248, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(253, 252, 248, 0.2);
+            border-radius: 4px;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .social-link:hover {
+            color: var(--bronze);
+            border-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(253, 252, 248, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Responsive adjustment */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-social {
+                text-align: center;
+            }
+            
+            .social-link {
+                justify-content: center;
+            }
+            
+            .footer-brand {
+                text-align: center;
+                align-items: center;
+            }
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(253, 252, 248, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        /* Enhanced Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Replace text logo with glowing image */
+        .site-logo {
+            height: 12px;
+            width: 120px;
+            position: relative;
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(168, 146, 110, 0.25));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 18px rgba(168, 146, 110, 0.4));
+        }
+        
+        @media (prefers-color-scheme: dark){
+            .site-logo{
+                mix-blend-mode: screen;
+                background: transparent;
+            }
+        }
+
+        /* Enhanced Responsive Design */
+                @media (max-width: 1200px) {
+            .collections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .clients-grid {
+                gap: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero::before {
+                width: 50%;
+            }
+            
+            .hero-visual {
+                width: 40%;
+            }
+        }
+
+    @media (max-width: 1200px) {
+            .collections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .clients-grid {
+                gap: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero::before {
+                width: 50%;
+            }
+            
+            .hero-visual {
+                width: 40%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav.desktop {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav.mobile {
+                display: block;
+            }
+            
+            .hero-content {
+                text-align: center;
+                max-width: none;
+            }
+            
+            .hero::before {
+                display: none;
+            }
+            
+            .hero-visual {
+                display: none;
+            }
+            
+            .heritage-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem 1.5rem;
+            }
+            
+            .client-logo {
+                height: 110px;
+                max-width: 100%;
+                padding: 0.5rem;
+            }
+            
+            .client-logo img {
+                max-width: 160px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .heritage-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-brand {
+                text-align: center;
+                align-items: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .btn {
+                padding: 1rem 2rem;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .collection-content {
+                padding: 1.5rem;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem 1rem;
+            }
+            
+            .client-logo {
+                height: 100px;
+                padding: 0.4rem;
+            }
+            
+            .client-logo img {
+                max-width: 130px;
+            }
+        }
+    </style>
+
+
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="/Home" class="logo">
+                <picture>
+                    <!-- Dark mode version (slightly brighter/cooler glow) -->
+                    <source srcset="/files/Secret Linen - Logo.png" media="(prefers-color-scheme: dark)">
+                    <!-- Default (light mode) -->
+                    <img src="/files/Secret Linen - Logo.png" alt="Secret Linen" class="site-logo">
+                </picture>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop">
+                <ul>
+                    <li><a href="/Home" class="active">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Uniforms">Uniforms</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/About#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle">☰</button>
+            
+            <!-- Mobile Navigation -->
+            <nav class="mobile">
+                <ul>
+                    <li><a href="/Home" class="active">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Uniforms">Uniforms</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/About#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-eyebrow">Since 2024</span>
+                <h1 class="hero-title">Quiet Luxury, Woven into Life</h1>
+                <p class="hero-description">
+                    For over years, Secret Linen has crafted exceptional textiles that transform spaces into sanctuaries of comfort and timeless elegance.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/Collections" class="btn btn-primary">Explore Collections</a>
+                    <a href="/Services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="/files/Linen Bedroom.jpg" alt="Luxury linen bedroom">
+        </div>
+    </section>
+
+    <!-- Collections Preview -->
+    <section class="section collections-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Our Collections</span>
+                <h2>Crafted for Every Space</h2>
+                <p>Premium textiles designed for hospitality and refined living</p>
+            </div>
+            
+            <div class="collections-grid">
+                <div class="collection-card fade-in">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=600&q=80" alt="Hotel Collection">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Hotels</h3>
+                        <p class="collection-description">Luxury bedding and bath collections for premium hospitality experiences</p>
+                        <a href="/Collections#hotels" class="collection-link">Discover →</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card fade-in">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Hospital Collection">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Hospitals</h3>
+                        <p class="collection-description">Medical-grade textiles with anti-microbial properties</p>
+                        <a href="/Collections#hospitals" class="collection-link">Discover →</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card fade-in">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Spa Collection">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Spas</h3>
+                        <p class="collection-description">Plush towels and robes for ultimate wellness experiences</p>
+                        <a href="/Collections#spas" class="collection-link">Discover →</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card fade-in">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Salon Collection">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Salons</h3>
+                        <p class="collection-description">Durable, bleach-safe textiles for professional beauty spaces</p>
+                        <a href="/Collections#salons" class="collection-link">Discover →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="section heritage">
+        <div class="container">
+            <div class="heritage-content">
+                <div class="heritage-text">
+                    <span class="section-eyebrow">Our Heritage</span>
+                    <h2>A Legacy Woven with Care</h2>
+                    <p>From a modest family workshop in 1975, we've spent decades perfecting the art of textile craftsmanship. What began with the intricate weaving of silk sarees has evolved into a legacy of creating exquisite bedding linens that bring comfort and elegance to hotels, hospitals, spas, and salons.
+                    <br><br>Our family's passion for detail, commitment to quality, and willingness to innovate have allowed us to adapt our craftsmanship to meet the needs of discerning establishments like yours. We take pride in marrying time-honored traditions with modern designs, ensuring that every piece we create reflects our dedication to excellence.</p>
+                    <p>By choosing our linens, you're not just selecting a product; you're embracing a story of heritage, meticulous care, and forward-thinking design. We're excited to partner with you, bringing a touch of our family's warmth and expertise to your spaces.</p>
+                    
+                    <div class="heritage-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">9+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Hotel Partners</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Natural Fibers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="heritage-visual fade-in">
+                    <img src="/Homepage/Crafts.jpg" alt="Craftsmanship">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Our Services</span>
+                <h2>Bespoke Solutions</h2>
+                <p>Tailored programs for hospitality and corporate clients</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3 class="service-title">Corporate Gifting</h3>
+                    <p class="service-description">Elevate every gesture with timeless luxury linens and custom packaging</p>
+                    <a href="/Services#gifting" class="collection-link">Learn More →</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3 class="service-title">Hospitality Partnerships</h3>
+                    <p class="service-description">End-to-end linen programs for hotels, resorts, and luxury accommodations</p>
+                    <a href="/Services#hospitality" class="collection-link">Learn More →</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3 class="service-title">Customization</h3>
+                    <p class="service-description">Bespoke designs, embroidery, and custom sizing for unique requirements</p>
+                    <a href="/Services#customization" class="collection-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Showcase Section -->
+    <section class="section client-showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow-showcase">Our Clients</span>
+                <h2>Trusted by Industry Leaders</h2>
+                <p>We're proud to partner with exceptional establishments that value quality and craftsmanship</p>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo fade-in">
+                    <a href="https://vkempire.in/" target="_blank" rel="noopener noreferrer" title="Visit VK Empire">
+                        <img src="clients/VKE.png" alt="VK Empire">
+                    </a>
+                </div>
+                
+                <div class="client-logo fade-in">
+                    <a href="https://evanihealthcare.com/" target="_blank" rel="noopener noreferrer" title="Visit Evani Health">
+                        <img src="/clients/EVANI Health.png" alt="Evani Health">
+                    </a>
+                </div>
+                
+                <div class="client-logo fade-in">
+                    <a href="https://www.thedfmc.com/" target="_blank" rel="noopener noreferrer" title="Visit Dhiya Fertility">
+                        <img src="/clients/Dhiya Fertility.png" alt="Dhiya Fertility">
+                    </a>
+                </div>
+                
+                <div class="client-logo fade-in">
+                    <a href="https://continentspa.com/" target="_blank" rel="noopener noreferrer" title="Visit Continent SPA">
+                        <img src="/clients/Continent Spa.png" alt="Continent SPA">
+                    </a>
+                </div>
+
+                <div class="client-logo fade-in">
+                    <a href="https://crayonshotels.com/" target="_blank" rel="noopener noreferrer" title="Visit Crayons Hotel">
+                        <img src="/clients/Crayons.png" alt="Crayons Hotel">
+                    </a>
+                </div>
+
+                <div class="client-logo fade-in">
+                    <a href="https://westin.marriott.com/" target="_blank" rel="noopener noreferrer" title="Visit WESTIN Hotels & Resorts">
+                        <img src="/clients/WESTIN.png" alt="WESTIN HOTELS & RESORTS">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Schedule a consultation with our textile experts and discover how Secret Linen can elevate your hospitality experience or create the perfect bespoke solution for your needs.</p>
+            <a href="/About#contact" class="btn btn-light">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer style="display: none;">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <picture>
+                        <!-- Dark mode version -->
+                        <source srcset="/files/Secret Linen - Logo.png" media="(prefers-color-scheme: dark)">
+                        <!-- Default (light mode) -->
+                        <img src="/files/Secret Linen - Logo.png" alt="Secret Linen" class="site-logo">
+                    </picture>
+                </div>
+                <p class="footer-description">
+                    Years of crafting exceptional textiles for hospitality and refined living. Quiet luxury, woven into life.
+                </p>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <strong>Address:</strong> #59, 1st Floor, Balaji Nagar Main Road, Chennai 600088
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> +91-9003555940
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong> secretlinenindia@gmail.com
+                    </div>
+                </div>
+                <!-- Instagram Icon -->
+                <div class="footer-social">
+                    <a href="https://instagram.com/secretlinenindia" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>@secretlinen</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Collections">Collections</a></li>
+                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/About">Our Story</a></li>
+                    <li><a href="/About#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="/Services#gifting">Corporate Gifting</a></li>
+                    <li><a href="/Services#hospitality">Hospitality</a></li>
+                    <li><a href="/Services#customization">Customization</a></li>
+                    <li><a href="/Services#consultation">Consultation</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Secret Linen. All rights reserved. Crafted with ❤️ by 69TM.</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Enhanced scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Enhanced mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const mobileNav = document.querySelector('nav.mobile');
+            
+            mobileToggle.addEventListener('click', function() {
+                const isActive = mobileNav.classList.contains('active');
+                
+                if (isActive) {
+                    mobileNav.classList.remove('active');
+                    this.innerHTML = '☰';
+                } else {
+                    mobileNav.classList.add('active');
+                    this.innerHTML = '✕';
+                }
+            });
+            
+            // Close mobile menu when clicking on links
+            const mobileLinks = document.querySelectorAll('nav.mobile a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    mobileToggle.innerHTML = '☰';
+                });
+            });
+            
+            // Enhanced header scroll effect
+            let lastScrollY = window.scrollY;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(253, 252, 248, 0.98)';
+                    header.style.padding = '0.5rem 0';
+                    
+                    if (window.scrollY > lastScrollY) {
+                        header.style.transform = 'translateY(-100%)';
+                    } else {
+                        header.style.transform = 'translateY(0)';
+                    }
+                } else {
+                    header.style.background = 'rgba(253, 252, 248, 0.95)';
+                    header.style.padding = '0';
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = window.scrollY;
+            });
+            
+            // Enhanced hover effects for cards
+            const cards = document.querySelectorAll('.collection-card, .service-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
