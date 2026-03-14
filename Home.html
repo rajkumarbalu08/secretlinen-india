@@ -100,6 +100,7 @@
             overflow: visible;
             z-index: 1000;
             background: rgba(253, 252, 248, 0.95);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(232, 226, 214, 0.3);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -226,6 +227,7 @@
             left: 0;
             width: 100%;
             background: rgba(253, 252, 248, 0.98);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--stone);
             padding: 2rem 0;
@@ -787,20 +789,36 @@
         }
         
         .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-            justify-items: center;
-            align-items: center;
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        
+        .clients-track {
+            display: flex;
+            animation: marquee 25s linear infinite;
+            gap: 3rem;
+        }
+        
+        .clients-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
         
        /* Client logo specific styles - IMPROVED FOR ALIGNMENT */
         .client-logo {
-            width: 100%;
-            max-width: 280px;
-            height: 140px;
+            flex-shrink: 0;
+            width: 180px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -818,20 +836,20 @@
 
         .client-logo img {
             max-height: 100%;
-            max-width: 200px;
+            max-width: 160px;
             object-fit: contain;
             height: auto;
             width: auto;
             filter: none;
             mix-blend-mode: normal;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         .client-logo:hover img {
             filter: grayscale(0%);
             opacity: 1;
-            transform: translateY(-5px);
+            transform: scale(1.05);
         }
         
         /* Enhanced CTA Section */
@@ -949,6 +967,10 @@
 
         .footer-links {
             list-style: none;
+        }
+
+        .footer-hidden {
+            display: none;
         }
 
         .footer-links li {
@@ -1184,18 +1206,21 @@
             }
             
             .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem 1.5rem;
+                overflow: hidden;
+            }
+            
+            .clients-track {
+                gap: 2rem;
             }
             
             .client-logo {
-                height: 110px;
-                max-width: 100%;
+                width: 150px;
+                height: 100px;
                 padding: 0.5rem;
             }
             
             .client-logo img {
-                max-width: 160px;
+                max-width: 130px;
             }
             
             .footer-content {
@@ -1241,18 +1266,19 @@
                 padding: 1.5rem;
             }
             
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem 1rem;
+            .clients-track {
+                gap: 1.5rem;
+                animation-duration: 20s;
             }
             
             .client-logo {
-                height: 100px;
+                width: 130px;
+                height: 90px;
                 padding: 0.4rem;
             }
             
             .client-logo img {
-                max-width: 130px;
+                max-width: 110px;
             }
         }
     </style>
@@ -1456,40 +1482,92 @@
             </div>
             
             <div class="clients-grid">
-                <div class="client-logo fade-in">
-                    <a href="https://vkempire.in/" target="_blank" rel="noopener noreferrer" title="Visit VK Empire">
-                        <img src="clients/VKE.png" alt="VK Empire">
-                    </a>
-                </div>
-                
-                <div class="client-logo fade-in">
-                    <a href="https://evanihealthcare.com/" target="_blank" rel="noopener noreferrer" title="Visit Evani Health">
-                        <img src="/clients/EVANI Health.png" alt="Evani Health">
-                    </a>
-                </div>
-                
-                <div class="client-logo fade-in">
-                    <a href="https://www.thedfmc.com/" target="_blank" rel="noopener noreferrer" title="Visit Dhiya Fertility">
-                        <img src="/clients/Dhiya Fertility.png" alt="Dhiya Fertility">
-                    </a>
-                </div>
-                
-                <div class="client-logo fade-in">
-                    <a href="https://continentspa.com/" target="_blank" rel="noopener noreferrer" title="Visit Continent SPA">
-                        <img src="/clients/Continent Spa.png" alt="Continent SPA">
-                    </a>
-                </div>
+                <div class="clients-track">
+                    <!-- First set of logos -->
+                    <div class="client-logo">
+                        <a href="https://vkempire.in/" target="_blank" rel="noopener noreferrer" title="Visit VK Empire">
+                            <img src="/clients/VKE.png" alt="VK Empire">
+                        </a>
+                    </div>
+                    
+                    <div class="client-logo">
+                        <a href="https://evanihealthcare.com/" target="_blank" rel="noopener noreferrer" title="Visit Evani Health">
+                            <img src="/clients/EVANI Health.png" alt="Evani Health">
+                        </a>
+                    </div>
+                    
+                    <div class="client-logo">
+                        <a href="https://www.thedfmc.com/" target="_blank" rel="noopener noreferrer" title="Visit Dhiya Fertility">
+                            <img src="/clients/Dhiya Fertility.png" alt="Dhiya Fertility">
+                        </a>
+                    </div>
+                    
+                    <div class="client-logo">
+                        <a href="https://continentspa.com/" target="_blank" rel="noopener noreferrer" title="Visit Continent SPA">
+                            <img src="/clients/Continent Spa.png" alt="Continent SPA">
+                        </a>
+                    </div>
 
-                <div class="client-logo fade-in">
-                    <a href="https://crayonshotels.com/" target="_blank" rel="noopener noreferrer" title="Visit Crayons Hotel">
-                        <img src="/clients/Crayons.png" alt="Crayons Hotel">
-                    </a>
-                </div>
+                    <div class="client-logo">
+                        <a href="https://crayonshotels.com/" target="_blank" rel="noopener noreferrer" title="Visit Crayons Hotel">
+                            <img src="/clients/Crayons.png" alt="Crayons Hotel">
+                        </a>
+                    </div>
 
-                <div class="client-logo fade-in">
-                    <a href="https://westin.marriott.com/" target="_blank" rel="noopener noreferrer" title="Visit WESTIN Hotels & Resorts">
-                        <img src="/clients/WESTIN.png" alt="WESTIN HOTELS & RESORTS">
-                    </a>
+                    <div class="client-logo">
+                        <a href="https://westin.marriott.com/" target="_blank" rel="noopener noreferrer" title="Visit WESTIN Hotels & Resorts">
+                            <img src="/clients/WESTIN.png" alt="WESTIN HOTELS & RESORTS">
+                        </a>
+                    </div>
+
+                    <div class="client-logo">
+                        <a href="https://suganhospital.com/" target="_blank" rel="noopener noreferrer" title="Visit Sugan Hospital">
+                            <img src="/clients/Sugan Hospital.png" alt="Sugan Hospital">
+                        </a>
+                    </div>
+
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="client-logo">
+                        <a href="https://vkempire.in/" target="_blank" rel="noopener noreferrer" title="Visit VK Empire">
+                            <img src="/clients/VKE.png" alt="VK Empire">
+                        </a>
+                    </div>
+                    
+                    <div class="client-logo">
+                        <a href="https://evanihealthcare.com/" target="_blank" rel="noopener noreferrer" title="Visit Evani Health">
+                            <img src="/clients/EVANI Health.png" alt="Evani Health">
+                        </a>
+                    </div>
+                    
+                    <div class="client-logo">
+                        <a href="https://www.thedfmc.com/" target="_blank" rel="noopener noreferrer" title="Visit Dhiya Fertility">
+                            <img src="/clients/Dhiya Fertility.png" alt="Dhiya Fertility">
+                        </a>
+                    </div>
+                    
+                    <div class="client-logo">
+                        <a href="https://continentspa.com/" target="_blank" rel="noopener noreferrer" title="Visit Continent SPA">
+                            <img src="/clients/Continent Spa.png" alt="Continent SPA">
+                        </a>
+                    </div>
+
+                    <div class="client-logo">
+                        <a href="https://crayonshotels.com/" target="_blank" rel="noopener noreferrer" title="Visit Crayons Hotel">
+                            <img src="/clients/Crayons.png" alt="Crayons Hotel">
+                        </a>
+                    </div>
+
+                    <div class="client-logo">
+                        <a href="https://westin.marriott.com/" target="_blank" rel="noopener noreferrer" title="Visit WESTIN Hotels & Resorts">
+                            <img src="/clients/WESTIN.png" alt="WESTIN HOTELS & RESORTS">
+                        </a>
+                    </div>
+
+                    <div class="client-logo">
+                        <a href="https://suganhospital.com/" target="_blank" rel="noopener noreferrer" title="Visit Sugan Hospital">
+                            <img src="/clients/Sugan Hospital.png" alt="Sugan Hospital">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1505,7 +1583,7 @@
     </section>
 
     <!-- Footer -->
-<footer style="display: none;">
+<footer class="footer-hidden">
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
@@ -1533,7 +1611,7 @@
                 </div>
                 <!-- Instagram Icon -->
                 <div class="footer-social">
-                    <a href="https://instagram.com/secretlinenindia" target="_blank" class="social-link">
+                    <a href="https://instagram.com/secretlinenindia" target="_blank" rel="noopener noreferrer" class="social-link">
                         <i class="fab fa-instagram"></i>
                         <span>@secretlinen</span>
                     </a>

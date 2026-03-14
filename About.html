@@ -93,6 +93,7 @@
             overflow: visible;         /* let the logo extend outside */
             z-index: 1000;
             background: rgba(253, 252, 248, 0.95);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(232, 226, 214, 0.3);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -218,6 +219,7 @@
             left: 0;
             width: 100%;
             background: rgba(253, 252, 248, 0.98);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--stone);
             padding: 2rem 0;
@@ -584,6 +586,81 @@
             color: #666;
             margin-bottom: 0.25rem;
             line-height: 1.5;
+        }
+
+        /* Utility classes to replace inline styles */
+        .section-heading-center {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading-center-charcoal {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--charcoal);
+        }
+
+        .section-spacer {
+            margin-top: 4rem;
+        }
+
+        .section-spacer-sm {
+            margin-top: 2rem;
+        }
+
+        .content-centered {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .quote-text {
+            font-size: 1.25rem;
+            color: #555;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .sustainability-img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .practices-section {
+            background: var(--linen);
+            border-color: var(--sage);
+            margin-top: 4rem;
+        }
+
+        .mission-icon-green {
+            background: rgba(168, 184, 165, 0.2);
+            color: var(--sage);
+        }
+
+        .contact-buttons {
+            margin-top: 2rem;
+        }
+
+        .btn-call {
+            display: inline-flex;
+            margin-right: 1rem;
+        }
+
+        .btn-submit-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .map-heading {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .studio-heading {
+            margin-bottom: 2rem;
         }
         
         .contact-form {
@@ -1207,7 +1284,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                 </div>
 
                 <div class="mission-section fade-in">
-                    <h3 style="text-align: center; margin-bottom: 3rem;">Our Commitment to Excellence</h3>
+                    <h3 class="section-heading-center">Our Commitment to Excellence</h3>
                     <div class="mission-grid">
                         <div class="mission-item">
                             <div class="mission-icon">🎯</div>
@@ -1233,8 +1310,8 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                 </div>
 
                 <!-- Values Section -->
-                <div style="margin-top: 4rem;">
-                    <div class="heritage-content fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <div class="section-spacer">
+                    <div class="heritage-content fade-in content-centered">
                         <span class="page-eyebrow">Our Philosophy</span>
                         <h2>WEAVING A RESPONSIBLE FUTURE</h2>
                         <p>
@@ -1296,12 +1373,12 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                 </div>
 
                 <!-- Sustainability Section - REVISED LAYOUT -->
-                <section class="section" style="margin-top: 2rem;">
+                <section class="section section-spacer-sm">
                     <div class="container">
-                        <div class="heritage-content fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                        <div class="heritage-content fade-in content-centered">
                             <span class="page-eyebrow">Our Promise</span>
                             <h2>Sustainability: Evolving the Better Future</h2>
-                            <p style="font-size: 1.25rem; color: #555; line-height: 1.7; font-style: italic;">
+                            <p class="quote-text">
                                 We are glad for our progress so far. We impress upon our customers that better has no bounds.
                             </p>
                         </div>
@@ -1329,7 +1406,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
 
                             <!-- Middle Column: Image -->
                             <div class="sustainability-image">
-                                <img src="/Contents/Sustainability.jpg" alt="Sustainable Linen Production" style="width: 100%; height: 420px; object-fit: cover; border-radius: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                                <img src="/Contents/Sustainability.jpg" alt="Sustainable Linen Production" class="sustainability-img">
                             </div>
 
                             <!-- Right Column: Last Two Content Items -->
@@ -1353,32 +1430,32 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                         </div>
 
                         <!-- Sustainable Practices Grid -->
-                        <div class="mission-section fade-in" style="background: var(--linen); border-color: var(--sage); margin-top: 4rem;">
-                            <h3 style="text-align: center; margin-bottom: 3rem; color: var(--charcoal);">Our Sustainable Practices</h3>
+                        <div class="mission-section fade-in practices-section">
+                            <h3 class="section-heading-center-charcoal">Our Sustainable Practices</h3>
                             <div class="mission-grid">
                                 <div class="mission-item">
-                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">♻️</div>
+                                    <div class="mission-icon mission-icon-green">♻️</div>
                                     <h4 class="mission-title">Circular Approach</h4>
                                     <p class="mission-description">
                                         Designing for longevity and end-of-life recyclability
                                     </p>
                                 </div>
                                 <div class="mission-item">
-                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">💚</div>
+                                    <div class="mission-icon mission-icon-green">💚</div>
                                     <h4 class="mission-title">Natural Fibers</h4>
                                     <p class="mission-description">
                                         100% organic cotton and biodegradable materials
                                     </p>
                                 </div>
                                 <div class="mission-item">
-                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">🤝</div>
+                                    <div class="mission-icon mission-icon-green">🤝</div>
                                     <h4 class="mission-title">Community Focus</h4>
                                     <p class="mission-description">
                                         Supporting traditional weavers and artisan communities
                                     </p>
                                 </div>
                                 <div class="mission-item">
-                                    <div class="mission-icon" style="background: rgba(168, 184, 165, 0.2); color: var(--sage);">🌍</div>
+                                    <div class="mission-icon mission-icon-green">🌍</div>
                                     <h4 class="mission-title">Global Standards</h4>
                                     <p class="mission-description">
                                         Adhering to international sustainability certifications
@@ -1409,7 +1486,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info fade-in">
-                        <h3 style="margin-bottom: 2rem;">Visit Our Studio</h3>
+                        <h3 class="studio-heading">Visit Our Studio</h3>
                         
                         <div class="contact-item">
                             <div class="contact-icon">📍</div>
@@ -1450,8 +1527,8 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                             </div>
                         </div>
 
-                        <div style="margin-top: 2rem;">
-                            <a href="tel:+919003555940" class="btn btn-primary" style="display: inline-flex; margin-right: 1rem;">
+                        <div class="contact-buttons">
+                            <a href="tel:+919003555940" class="btn btn-primary btn-call">
                                 Call Now
                             </a>
                             <a href="mailto:secretlinenindia@gmail.com" class="btn btn-light">
@@ -1504,7 +1581,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                                 <textarea id="message" class="form-textarea" placeholder="Tell us about your requirements..." required></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <button type="submit" class="btn btn-primary btn-submit-full">
                                 Send Message
                             </button>
                         </form>
@@ -1512,13 +1589,12 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                 </div>
 
                 <div class="map-section fade-in">
-                    <h3 style="text-align: center; margin-bottom: 2rem;">Find Our Studio</h3>
+                    <h3 class="map-heading">Find Our Studio</h3>
                     <div class="map-container">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.347476188198!2d80.199374!3d13.010595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52679e96f7e7c3%3A0x7ddbe0b8b84e3c1e!2sBalaji%20Nagar%2C%20Adambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600088!5e0!3m2!1sen!2sin!4v1647854328746!5m2!1sen!2sin" 
                             allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                            loading="lazy">
                         </iframe>
                     </div>
                 </div>
@@ -1545,7 +1621,7 @@ Working at Secretlinen is more than a job. It's an opportunity to become a taste
                 
                 <!-- Instagram Icon -->
                 <div class="footer-social">
-                    <a href="https://instagram.com/secretlinenindia" target="_blank" class="social-link">
+                    <a href="https://instagram.com/secretlinenindia" target="_blank" rel="noopener noreferrer" class="social-link">
                         <i class="fab fa-instagram"></i>
                         <span>@secretlinen</span>
                     </a>

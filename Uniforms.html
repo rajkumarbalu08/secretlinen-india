@@ -37,7 +37,6 @@
         
         html {
             scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
         }
         
         body {
@@ -88,6 +87,7 @@
             overflow: visible;
             z-index: 1000;
             background: rgba(253, 252, 248, 0.95);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(232, 226, 214, 0.3);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -193,6 +193,7 @@
             left: 0;
             width: 100%;
             background: rgba(253, 252, 248, 0.98);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--stone);
             padding: 1.5rem 0;
@@ -280,6 +281,7 @@
             z-index: 100;
             padding: 1.5rem 0;
             margin-bottom: 2rem;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             background: rgba(253, 252, 248, 0.95);
         }
@@ -299,6 +301,7 @@
             position: relative;
             font-size: 0.9rem;
             letter-spacing: 0.02em;
+            -webkit-user-select: none;
             user-select: none;
             border-radius: 4px;
         }
@@ -381,6 +384,30 @@
             transition: transform 0.8s ease;
         }
         
+        .content-image .img-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .img-bg-warm { background: #e8e2d6; }
+        .img-bg-light { background: #f5f1e8; }
+        .img-bg-muted { background: #d8cdbc; }
+
+        .section-bg-linen { background: var(--linen); }
+        .content-grid-spaced { margin-top: 6rem; }
+        .content-grid-spaced-sm { margin-top: 4rem; }
+
+        .heading-spaced { margin-top: 2rem; }
+        .heading-spaced-sm { margin-top: 1.5rem; }
+        .subtitle-bronze { margin-top: 1.5rem; color: var(--bronze); font-weight: 500; }
+        .note-spaced { margin-top: 1.5rem; }
+
         .content-image:hover img {
             transform: scale(1.05);
         }
@@ -445,7 +472,7 @@
         /* Operation Cards */
         .operation-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 4rem 0;
         }
@@ -902,8 +929,8 @@
                 </div>
                 <div class="content-image">
                     <!-- Image Placeholder 1: Replace with your uniform image -->
-                    <img src="/Uniforms/Whoweare.jpg" alt="The Weave - Our Heritage" style="background: #e8e2d6;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; width: 100%; height: 100%; color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Whoweare.jpg" alt="The Weave - Our Heritage" class="img-bg-warm">
+                    <div class="img-placeholder"></div>
                 </div>
             </div>
 
@@ -911,8 +938,8 @@
             <div class="content-grid">
                 <div class="content-image">
                     <!-- Image Placeholder 2: Replace with your uniform image -->
-                    <img src="/Uniforms/ATC.png" style="background: #f5f1e8;">
-                    <div style="position: absolute; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem; object-fit: contain;"></div>
+                    <img src="/Uniforms/ATC.png" alt="From Accessory to Complete Outfit" class="img-bg-light">
+                    <div class="img-placeholder"></div>
                 </div>
                 <div class="content-text">
                     <h3>From the Accessory to the Complete Outfit</h3>
@@ -932,15 +959,15 @@
                 </div>
                 <div class="content-image">
                     <!-- Image Placeholder 3: Replace with your quality control image -->
-                    <img src="/Uniforms/Uniform3.jpg" alt="Quality Control Process" style="background: #d8cdbc;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Uniform3.jpg" alt="Quality Control Process" class="img-bg-muted">
+                    <div class="img-placeholder"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How We Work Section -->
-    <section id="how-we-work" class="section story-section" style="background: var(--linen);">
+    <section id="how-we-work" class="section story-section section-bg-linen">
         <div class="container">
             <div class="story-header">
                 <span class="section-eyebrow">Our Process</span>
@@ -959,8 +986,8 @@
                 </div>
                 <div class="content-image">
                     <!-- Image Placeholder 4: Replace with your product durability image -->
-                    <img src="/Uniforms/Uniform1.jpg" alt="Durable Products" style="background: #f5f1e8;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Uniform1.jpg" alt="Durable Products" class="img-bg-light">
+                    <div class="img-placeholder"></div>
                 </div>
             </div>
 
@@ -968,8 +995,8 @@
             <div class="content-grid">
                 <div class="content-image">
                     <!-- Image Placeholder 5: Replace with your consultation image -->
-                    <img src="/Uniforms/Personalized followup.png" alt="Personalized Consultation" style="background: #e8e2d6;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Personalized followup.png" alt="Personalized Consultation" class="img-bg-warm">
+                    <div class="img-placeholder"></div>
                 </div>
                 <div class="content-text">
                     <h3>A Personalized Follow-up</h3>
@@ -992,8 +1019,8 @@
                 </div> -->
                 <!--<div class="content-image">
                      Image Placeholder 6: Replace with your logistics image 
-                    <img src="/Uniforms/Uniform2.jpg" alt="Logistics & Delivery" style="background: #d8cdbc;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Uniform2.jpg" alt="Logistics & Delivery" class="img-bg-muted">
+                    <div class="img-placeholder"></div>
                 </div>
             </div>
         </div>-->
@@ -1038,7 +1065,7 @@
             </div> -->
 
             <!-- Team at Your Service -->
-            <div class="content-grid" style="margin-top: 6rem;">
+            <div class="content-grid content-grid-spaced">
                 <div class="content-text">
                     <h3>A Team at Your Service</h3>
                     <p><strong>A single point of contact accompanies you from the creation to the delivery of the products.</strong></p>
@@ -1047,8 +1074,8 @@
                 </div>
                 <div class="content-image">
                     <!-- Image Placeholder 7: Replace with your team image -->
-                    <img src="/Uniforms/Team service.png" alt="Our Team" style="background: #f5f1e8;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Team service.png" alt="Our Team" class="img-bg-light">
+                    <div class="img-placeholder"></div>
                 </div>
             </div>
 
@@ -1056,8 +1083,8 @@
             <div class="content-grid">
                 <div class="content-image">
                     <!-- Image Placeholder 8: Replace with your quality assurance image -->
-                    <img src="/Uniforms/Quality Assurance.png" alt="Quality Assurance" style="background: #e8e2d6;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Quality Assurance.png" alt="Quality Assurance" class="img-bg-warm">
+                    <div class="img-placeholder"></div>
                 </div>
                 <div class="content-text">
                     <h3>Priority to Quality!</h3>
@@ -1069,7 +1096,7 @@
     </section>
 
     <!-- SECRET LINEN KIDS SUPPLIES Section -->
-    <section id="kids-supplies" class="section story-section" style="background: var(--linen);">
+    <section id="kids-supplies" class="section story-section section-bg-linen">
         <div class="container">
             <div class="story-header">
                 <span class="section-eyebrow">Child Safety & Quality</span>
@@ -1085,7 +1112,7 @@
                     <h3>Certified Safe Materials</h3>
                     <p>All fabrics are tested to ensure they are free from harmful chemicals and safe for sensitive skin. We prioritize materials that are breathable, hypoallergenic, and comfortable for all-day wear.</p>
                     
-                    <h3 style="margin-top: 2rem;">Independent Third-Party Inspection</h3>
+                    <h3 class="heading-spaced">Independent Third-Party Inspection</h3>
                     <p>To ensure the highest standards, every batch of our uniforms undergoes independent third-party inspection. These inspections are conducted under the internationally recognized AQL 2.5 standard, which means:</p>
                     
                     <ul class="feature-list">
@@ -1095,25 +1122,25 @@
                         <li>Assurance that only products meeting the approved quality level reach you</li>
                     </ul>
                     
-                    <p style="margin-top: 1.5rem;"><em>Every detail is crafted with care to ensure maximum safety and comfort for young wearers.</em></p>
+                    <p class="note-spaced"><em>Every detail is crafted with care to ensure maximum safety and comfort for young wearers.</em></p>
                 </div>
                 <div class="content-image">
                     <!-- Image Placeholder for Kids Uniforms Safety -->
-                    <img src="/Uniforms/Kids Safety.png" alt="Kids Uniform Safety & Quality" style="background: #f5f1e8;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/Kids Safety.png" alt="Kids Uniform Safety & Quality" class="img-bg-light">
+                    <div class="img-placeholder"></div>
                 </div>
             </div>
 
             <!-- SCHOOL UNIFORMS Focus -->
-            <div class="content-grid" style="margin-top: 4rem;">
+            <div class="content-grid content-grid-spaced-sm">
                  <div class="content-image"> 
-                    <img src="/Uniforms/School uniforms Comfort.png" alt="Comfortable School Uniforms" style="background: #e8e2d6;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #888; font-size: 0.9rem;"></div>
+                    <img src="/Uniforms/School uniforms Comfort.png" alt="Comfortable School Uniforms" class="img-bg-warm">
+                    <div class="img-placeholder"></div>
                 </div> 
                 <div class="content-text">
                     <h3>SCHOOL UNIFORMS</h3>
                     
-                    <h4 style="margin-top: 1.5rem; color: var(--bronze); font-weight: 500;">Safety First</h4>
+                    <h4 class="subtitle-bronze">Safety First</h4>
                     <p>Every kid's product is verified under recognized child safety norms — ensuring fabrics are skin-friendly, free from harmful chemicals, and designed with child-safe features.</p>
                     
                     <ul class="feature-list">
@@ -1123,7 +1150,7 @@
                         <li>Flame-retardant materials where required</li>
                     </ul>
                     
-                    <h4 style="margin-top: 1.5rem; color: var(--bronze); font-weight: 500;">Comfort & Durability</h4>
+                    <h4 class="subtitle-bronze">Comfort & Durability</h4>
                     <p>Our uniforms are crafted to keep children comfortable throughout the day while lasting through active school routines. Features include:</p>
                     
                     <ul class="feature-list">
@@ -1133,14 +1160,14 @@
                         <li>Growth-friendly adjustments where possible</li>
                     </ul>
                     
-                    <p style="margin-top: 1.5rem; font-weight: 400;">
+                    <p class="note-spaced">
                         We believe that when children feel comfortable and safe in their uniforms, they can focus on what matters most — learning and growing.
                     </p>
                 </div>
             </div>
 
             <!-- Quality Assurance Summary -->
-            <div class="operation-cards" style="margin-top: 4rem;">
+            <div class="operation-cards content-grid-spaced-sm">
                 <div class="operation-card">
                     <div class="operation-icon">🛡️</div>
                     <h3>Safety Certification</h3>
