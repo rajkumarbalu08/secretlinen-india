@@ -11,7 +11,8 @@
       "*.md",
       "*.pdf",
       "storage.rules",
-      "package-lock.json"
+      "package-lock.json",
+      "functions/**"
     ],
     "rewrites": [
       {
@@ -20,6 +21,16 @@
       }
     ]
   },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git"
+      ]
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   }
